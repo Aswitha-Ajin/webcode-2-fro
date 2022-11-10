@@ -1,30 +1,21 @@
-//import React from "react";
-import React,{ useState } from 'react';
-import axios from 'axios';
+
+import React from 'react';
 
 import {useNavigate} from 'react-router-dom';
 import { Link } from "react-router-dom";
 
 function SearchComponent (){
     
-    const[boat, setboat] =useState();
+    
     
     const navigate = useNavigate();
-    const handleSubmit = async (e) => {
-        e.preventDefault()
-        axios.post("http://localhost:3001/headset/get",);
-        try{
-            navigate("/ecommerce")
-        }catch(err) {
-            console.log(err)
-        }
-    }
+    
     return(
         <>
      
 <div >
 
-<nav onSubmit={handleSubmit} className="navbar sticky-top navbar-expand-lg navbar-dark">
+<nav  className="navbar sticky-top navbar-expand-lg navbar-dark">
 
 <Link to="/" className="navbar-brand"><i className="far fa-newspaper"></i><h1>Web Scrapping</h1> </Link>
 
@@ -37,9 +28,9 @@ function SearchComponent (){
 
 <div class="form-floating mb-3">
   <input type="search" class="form-control" id="floatingInput" placeholder="Search here"/>
-  <label for="floatingInput" onClick={navigate(-1)}>Search here</label>
+  <label for="floatingInput" onClick={navigate()}>Search here</label>
 </div>
-  <button type="button" class="btn btn-primary" onChange={(e) => setboat(e.target.value)} >Search</button>
+  <button type="button" class="btn btn-primary" onChange={(e) =>(e.target.value)} >Search</button>
       
 
     
